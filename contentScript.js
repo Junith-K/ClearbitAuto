@@ -175,12 +175,13 @@ async function checkForElement1(format, gmail, domain) {
     }
 }
 
-async function checkForElement2(format) {
+async function checkForElement2(format, gmail, domain) {
     const targetElements = document.querySelectorAll(".cb-mb-0.cb-mt-0.cb-text-lg.cb-font-medium");
     
     if (targetElements.length) {
         const person_name = targetElements[0].textContent;
-        const company_name = targetElements[1].textContent;
+        const company_name = gmail==""?targetElements[1].textContent:gmail;
+      const domain_name = domain==""?"com":domain;
         if(namui!=person_name){
           namui = person_name;
           const composeButton = document.querySelector('div[role="button"][jsaction="click:dlrqf; clickmod:dlrqf"]');
@@ -194,19 +195,20 @@ async function checkForElement2(format) {
   
           let subject = "Expressing Interest in Frontend Developer Internship Opportunity";
           let name = person_name.split(" ")
-          let email = name[0][0].toLowerCase()+name[name.length - 1].toLowerCase()+"@"+company_name.toLowerCase()+".com";
+          let email = name[0][0].toLowerCase()+name[name.length - 1].toLowerCase()+"@"+company_name.toLowerCase()+"."+domain_name;
           console.log(email)
           await composeEmail(email, subject, person_name, company_name);
         }
       }
 }
 
-async function checkForElement3(format) {
+async function checkForElement3(format, gmail, domain) {
     const targetElements = document.querySelectorAll(".cb-mb-0.cb-mt-0.cb-text-lg.cb-font-medium");
     
     if (targetElements.length) {
         const person_name = targetElements[0].textContent;
-        const company_name = targetElements[1].textContent;
+        const company_name = gmail==""?targetElements[1].textContent:gmail;
+      const domain_name = domain==""?"com":domain;
         if(namui!=person_name){
           namui = person_name;
           const composeButton = document.querySelector('div[role="button"][jsaction="click:dlrqf; clickmod:dlrqf"]');
@@ -220,19 +222,20 @@ async function checkForElement3(format) {
   
           let subject = "Expressing Interest in Frontend Developer Internship Opportunity";
           let name = person_name.split(" ")
-          let email = name[0].toLowerCase()+"@"+company_name.toLowerCase()+".com";
+          let email = name[0].toLowerCase()+"@"+company_name.toLowerCase()+"."+domain_name;
           console.log(email)
           await composeEmail(email, subject, person_name, company_name);
         }
       }
 }
 
-async function checkForElement4(format) {
+async function checkForElement4(format, gmail, domain) {
     const targetElements = document.querySelectorAll(".cb-mb-0.cb-mt-0.cb-text-lg.cb-font-medium");
     
     if (targetElements.length) {
         const person_name = targetElements[0].textContent;
-        const company_name = targetElements[1].textContent;
+        const company_name = gmail==""?targetElements[1].textContent:gmail;
+      const domain_name = domain==""?"com":domain;
         if(namui!=person_name){
           namui = person_name;
           const composeButton = document.querySelector('div[role="button"][jsaction="click:dlrqf; clickmod:dlrqf"]');
@@ -246,7 +249,7 @@ async function checkForElement4(format) {
   
           let subject = "Expressing Interest in Frontend Developer Internship Opportunity";
           let name = person_name.split(" ")
-          let email = name[0].toLowerCase()+name[name.length - 1].toLowerCase()+"@"+company_name.toLowerCase()+".com";
+          let email = name[0].toLowerCase()+name[name.length - 1].toLowerCase()+"@"+company_name.toLowerCase()+"."+domain_name;
           console.log(email)
           await composeEmail(email, subject, person_name, company_name);
         }
@@ -263,10 +266,10 @@ chrome.runtime.onMessage.addListener(function (message, sender, sendResponse) {
     if (message.messageText === "f1") {
       checkInterval1 = setInterval(() => checkForElement1(message.messageText,message.email,message.domain), 1000);
     } else if (message.messageText === "f2") {
-      checkInterval2 = setInterval(() => checkForElement2(message.messageText), 1000);
+      checkInterval2 = setInterval(() => checkForElement2(message.messageText,message.email,message.domain), 1000);
     } else if (message.messageText === "f3") {
-      checkInterval3 = setInterval(() => checkForElement3(message.messageText), 1000);
+      checkInterval3 = setInterval(() => checkForElement3(message.messageText,message.email,message.domain), 1000);
     } else if (message.messageText === "f4") {
-      checkInterval4 = setInterval(() => checkForElement4(message.messageText), 1000);
+      checkInterval4 = setInterval(() => checkForElement4(message.messageText,message.email,message.domain), 1000);
     }
 });

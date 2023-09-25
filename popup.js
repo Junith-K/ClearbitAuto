@@ -8,6 +8,9 @@ document.addEventListener("DOMContentLoaded", async () => {
 
     const getemail = localStorage.getItem('email');
     const getdomain = localStorage.getItem('domain');
+    chrome.tabs.query({ active: true, currentWindow: true }, function (tabs) {
+      chrome.tabs.sendMessage(tabs[0].id, { action: `runMyFunction${selectedButtonId}`, messageText: selectedButtonId, email: getemail, domain: getdomain });
+    });
     const email = document.getElementById('email');
     email.value = getemail
     email.addEventListener('input', function() {
@@ -24,6 +27,7 @@ document.addEventListener("DOMContentLoaded", async () => {
         chrome.tabs.sendMessage(tabs[0].id, { action: `runMyFunction${selectedButtonId}`, messageText: selectedButtonId, email: email.value, domain: domain.value });
       });
     });
+    
     buttons.forEach(button => {
       button.addEventListener('click', () => {
         buttons.forEach(otherButton => {
