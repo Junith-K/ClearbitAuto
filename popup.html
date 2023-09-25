@@ -1,0 +1,30 @@
+<!-- popup.html -->
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Clearbit Auto</title>
+  <style>
+    button {
+      padding: 10px;
+      background-color: #3498db;
+      color: #fff;
+      border: none;
+      cursor: pointer;
+    }
+    .selected {
+      background-color: #e74c3c;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">Choose the Email Format</div>
+  <button class="format" id="f1">john.doe@gmail.com</button>
+  <button class="format" id="f2">jdoe@gmail.com</button>
+  <button class="format" id="f3">john@gmail.com</button>
+  <button class="format" id="f4">johndoe@gmail.com</button>
+  <input type="text" id="email" placeholder="Email">
+  <input type="text" id="domain" placeholder="Domain">
+
+  <script type="module" src="popup.js"></script>
+</body>
+</html>
