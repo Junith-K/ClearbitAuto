@@ -255,13 +255,43 @@ async function checkForElement4(format, gmail, domain) {
         }
       }
 }
+
+async function checkForElement5(format, gmail, domain) {
+  const targetElements = document.querySelectorAll(".cb-mb-0.cb-mt-0.cb-text-lg.cb-font-medium");
   
-let checkInterval1, checkInterval2, checkInterval3, checkInterval4;
+  if (targetElements.length) {
+    const person_name = targetElements[0].textContent;
+    const company_name = gmail==""?targetElements[1].textContent:gmail;
+    const domain_name = domain==""?"com":domain;
+    if(namui!=person_name){
+      console.log(gmail)
+      console.log(domain)
+      namui = person_name;
+      const composeButton = document.querySelector('div[role="button"][jsaction="click:dlrqf; clickmod:dlrqf"]');
+      composeButton.click();
+
+      await new Promise((resolve) => {
+          setTimeout(() => {
+          resolve();
+          }, 1000);
+      });
+
+      let subject = "Expressing Interest in Frontend Developer Internship Opportunity";
+      let name = person_name.split(" ")
+      let email = name[0].toLowerCase()+"."+name[name.length - 1][0].toLowerCase()+"@"+company_name.toLowerCase()+"."+domain_name;
+      console.log(email)
+      await composeEmail(email, subject, person_name, company_name);
+    }
+  }
+}
+  
+let checkInterval1, checkInterval2, checkInterval3, checkInterval4, checkInterval5;
 chrome.runtime.onMessage.addListener(function (message, sender, sendResponse) {
     clearInterval(checkInterval1);
     clearInterval(checkInterval2);
     clearInterval(checkInterval3);
     clearInterval(checkInterval4);
+    clearInterval(checkInterval5);
   
     if (message.messageText === "f1") {
       checkInterval1 = setInterval(() => checkForElement1(message.messageText,message.email,message.domain), 1000);
@@ -271,5 +301,7 @@ chrome.runtime.onMessage.addListener(function (message, sender, sendResponse) {
       checkInterval3 = setInterval(() => checkForElement3(message.messageText,message.email,message.domain), 1000);
     } else if (message.messageText === "f4") {
       checkInterval4 = setInterval(() => checkForElement4(message.messageText,message.email,message.domain), 1000);
+    } else if (message.messageText === "f5") {
+      checkInterval5 = setInterval(() => checkForElement5(message.messageText,message.email,message.domain), 1000);
     }
 });
