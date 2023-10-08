@@ -1,6 +1,6 @@
 function composeEmail(email, subject, person_name, company_name, checkedornot, jobLink, jobTitle) {
     return new Promise((resolve)=> {
-        document.querySelector('input.agP.aFw').value = "junithkumar.r20@iiits.in"
+        document.querySelector('input.agP.aFw').value = email
         if(checkedornot=="true"){
           subject = subject.replace("Software or Frontend Engineer",jobTitle);
         }
@@ -15,7 +15,7 @@ function composeEmail(email, subject, person_name, company_name, checkedornot, j
 
         //important
         //ceo
-        if(checkedornot=="false"){
+        if(checkedornot=="false" || checkedornot==null){
           divElement.innerHTML = `
           <p>Dear ${person_name},</p>
           
@@ -89,8 +89,8 @@ async function checkForElement1(format, gmail, domain, checkedornot, jobLink, jo
     if (targetElements.length) {
       const person_name = targetElements[0].textContent;
       const company_name = targetElements[1].textContent;
-      const com_gmail = gmail==""?company_name:gmail;
-      const domain_name = domain==""?"com":domain;
+      const com_gmail = gmail=="" || gmail==null?company_name:gmail;
+        const domain_name = domain=="" || domain==null?"com":domain;
       if(namui!=person_name){
         console.log(gmail)
         console.log(domain)
@@ -118,8 +118,8 @@ async function checkForElement2(format, gmail, domain, checkedornot, jobLink, jo
     if (targetElements.length) {
         const person_name = targetElements[0].textContent;
         const company_name = targetElements[1].textContent;
-      const com_gmail = gmail==""?company_name:gmail;
-      const domain_name = domain==""?"com":domain;
+        const com_gmail = gmail=="" || gmail==null?company_name:gmail;
+        const domain_name = domain=="" || domain==null?"com":domain;
         if(namui!=person_name){
           namui = person_name;
           const composeButton = document.querySelector('div[role="button"][jsaction="click:dlrqf; clickmod:dlrqf"]');
@@ -141,12 +141,13 @@ async function checkForElement2(format, gmail, domain, checkedornot, jobLink, jo
 
 async function checkForElement3(format, gmail, domain, checkedornot, jobLink, jobTitle) {
     const targetElements = document.querySelectorAll(".cb-mb-0.cb-mt-0.cb-text-lg.cb-font-medium");
+
     
     if (targetElements.length) {
         const person_name = targetElements[0].textContent;
         const company_name = targetElements[1].textContent;
-      const com_gmail = gmail==""?company_name:gmail;
-      const domain_name = domain==""?"com":domain;
+        const com_gmail = gmail=="" || gmail==null?company_name:gmail;
+        const domain_name = domain=="" || domain==null?"com":domain;
         if(namui!=person_name){
           namui = person_name;
           const composeButton = document.querySelector('div[role="button"][jsaction="click:dlrqf; clickmod:dlrqf"]');
@@ -172,8 +173,8 @@ async function checkForElement4(format, gmail, domain, checkedornot, jobLink, jo
     if (targetElements.length) {
         const person_name = targetElements[0].textContent;
         const company_name = targetElements[1].textContent;
-      const com_gmail = gmail==""?company_name:gmail;
-      const domain_name = domain==""?"com":domain;
+        const com_gmail = gmail=="" || gmail==null?company_name:gmail;
+        const domain_name = domain=="" || domain==null?"com":domain;
         if(namui!=person_name){
           namui = person_name;
           const composeButton = document.querySelector('div[role="button"][jsaction="click:dlrqf; clickmod:dlrqf"]');
@@ -199,8 +200,8 @@ async function checkForElement5(format, gmail, domain, checkedornot, jobLink, jo
   if (targetElements.length) {
     const person_name = targetElements[0].textContent;
     const company_name = targetElements[1].textContent;
-      const com_gmail = gmail==""?company_name:gmail;
-      const domain_name = domain==""?"com":domain;
+    const com_gmail = gmail=="" || gmail==null?company_name:gmail;
+    const domain_name = domain=="" || domain==null?"com":domain;
     if(namui!=person_name){
       console.log(gmail)
       console.log(domain)
@@ -228,8 +229,8 @@ async function checkForElement6(format, gmail, domain, checkedornot, jobLink, jo
   if (targetElements.length) {
     const person_name = targetElements[0].textContent;
     const company_name = targetElements[1].textContent;
-      const com_gmail = gmail==""?company_name:gmail;
-      const domain_name = domain==""?"com":domain;
+    const com_gmail = gmail=="" || gmail==null?company_name:gmail;
+    const domain_name = domain=="" || domain==null?"com":domain;
     if(namui!=person_name){
       console.log(gmail)
       console.log(domain)
