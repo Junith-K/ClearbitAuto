@@ -3,6 +3,10 @@ function composeEmail(email, subject, person_name, company_name, checkedornot, j
         document.querySelector('input.agP.aFw').value = email
         if(checkedornot=="true"){
           subject = subject.replace("Software or Frontend Engineer",jobTitle);
+        }else{
+          if(jobTitle!=""){
+            subject = subject.replace("Software or Frontend Engineer",jobTitle);
+          }
         }
         document.querySelector('input[name="subjectbox"]').value = subject
         const divElement = document.querySelector('div.Am.Al.editable.LW-avf.tS-tW')
@@ -12,7 +16,6 @@ function composeEmail(email, subject, person_name, company_name, checkedornot, j
             divElement.removeChild(signatureDiv);
         }
 
-
         //important
         //ceo
         if(checkedornot=="false" || checkedornot==null){
@@ -21,13 +24,13 @@ function composeEmail(email, subject, person_name, company_name, checkedornot, j
           
           <p>I hope you're doing well. I'm reaching out because I'm genuinely impressed with ${company_name.charAt(0).toUpperCase() + company_name.slice(1)}'s reputation and impact in the industry.</p> 
           
-          <p>I'm a student at IIIT Sri City with a passion for Software Engineering, especially in Technologies like ReactJS, NextJS, NodeJS, ExpressJS and MongoDB. You can check out my Portfolio to get a good idea of my skills which you can explore at this link: <a href="https://portfolio-juni.vercel.app/">Portfolio_Juni</a>.</p>
+          <p>I am currently enrolled as a student at IIIT Sri City, specializing in Software Engineering. I have a particular passion for technologies such as ReactJS, NextJS, NodeJS, ExpressJS, and MongoDB. For a comprehensive overview of my skills and projects, please explore my portfolio at the following link: <a href="https://portfolio-juni.vercel.app/">Portfolio_Juni</a>.</p>
           
-          <p>Additionally, I have one year of practical experience gained through internships where I worked on various web development projects. I'm now looking for a Software or Frontend Engineer opportunity to further expand my skills and contribute effectively to an awesome team like yours.</p>
+          <p>I bring one year of hands-on experience acquired through Full-Time Opportunities, during which I successfully contributed to various Large Scale Applications. Currently, I am seeking a new professional opportunity as a ${jobTitle==""?"Software or Frontend Engineer":jobTitle} role that will allow me to expand my skill set and make a meaningful contribution to an exceptional team and product.</p>
           
-          <p>If there's an opportunity for a Software or Frontend Engineer at ${company_name.charAt(0).toUpperCase() + company_name.slice(1)}, I'd love to be considered. I believe this experience would be a great fit for both of us.</p>
+          <p>I am keen to be considered for the ${jobTitle==""?"Software or Frontend Engineer":jobTitle} role as I am genuinely interested in the opportunity. I believe that my experience aligns well with the requirements of the role, making it a suitable fit for me.</p>
 
-          <p>Thank you for your time, and I've attached my resume for your reference.</p>
+          <p>Thank you for your time, and I've attached my resume for your reference. Please feel free to contact me on my mobile at your convenience to further discuss.</p>
           
           <a href="https://drive.google.com/file/d/1LQoGXfPWFCU4vheV0o5_58vwmJVwFnQd/view">Resume_Junith</a>
 
@@ -42,13 +45,13 @@ function composeEmail(email, subject, person_name, company_name, checkedornot, j
           
           <p>I hope you're doing well. I'm reaching out because I'm genuinely impressed with ${company_name.charAt(0).toUpperCase() + company_name.slice(1)}'s reputation and impact in the industry.</p> 
           
-          <p>I'm a student at IIIT Sri City with a passion for Software Engineering. You can check out my Portfolio to get a good idea of my skills which you can explore at this link: <a href="https://portfolio-juni.vercel.app/">Portfolio_Juni</a>.</p>
+          <p>I am currently enrolled as a student at IIIT Sri City, specializing in Software Engineering. I have a particular passion for technologies such as ReactJS, NextJS, NodeJS, ExpressJS, and MongoDB. For a comprehensive overview of my skills and projects, please explore my portfolio at the following link: <a href="https://portfolio-juni.vercel.app/">Portfolio_Juni</a>.</p>
           
-          <p>Additionally, I have one year of practical experience gained through internships where I worked on various web development projects. I'm now looking for an ${jobTitle} opportunity to further expand my skills and contribute effectively to an awesome team like yours.</p>
+          <p>I bring one year of hands-on experience acquired through Full-Time Opportunities, during which I successfully contributed to various Large Scale Applications. Currently, I am seeking a new professional opportunity as a ${jobTitle} role that will allow me to expand my skill set and make a meaningful contribution to an exceptional team and product.</p>
           
           <p>I would love to get a referral from your side for the ${jobTitle} role at ${company_name.charAt(0).toUpperCase() + company_name.slice(1)}. I believe this experience would be a great fit for me.</p>
   
-          <p>Thank you for your time, and I've attached my Resume and the Job Link for your reference.</p>
+          <p>Thank you for your time, and I've attached my resume and the Job link for your reference. Please feel free to contact me on my mobile at your convenience to further discuss.</p>
           
           <a href="https://drive.google.com/file/d/1LQoGXfPWFCU4vheV0o5_58vwmJVwFnQd/view">Resume_Junith</a>
   
