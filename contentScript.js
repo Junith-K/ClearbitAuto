@@ -1,4 +1,4 @@
-function composeEmail(email, subject, person_name, company_name, checkedornot, jobLink, jobTitle) {
+function composeEmail(email, subject, person_name, company_name, checkedornot, jobLink, jobTitle, engineer) {
     return new Promise((resolve)=> {
         document.querySelector('input.agP.aFw').value = email
         if(checkedornot=="true"){
@@ -28,7 +28,7 @@ function composeEmail(email, subject, person_name, company_name, checkedornot, j
           
           <p>I bring one year of hands-on experience acquired through Full-Time Opportunities, during which I successfully contributed to various Large Scale Applications. Currently, I am seeking a new professional opportunity as a ${jobTitle==""?"Software or Frontend Engineer":jobTitle} role that will allow me to expand my skill set and make a meaningful contribution to an exceptional team and product.</p>
           
-          <p>I am keen to be considered for the ${jobTitle==""?"Software or Frontend Engineer":jobTitle} role as I am genuinely interested in the opportunity. I believe that my experience aligns well with the requirements of the role, making it a suitable fit for me.</p>
+          <p>I am keen to be considered for the ${jobTitle==""?"Software or Frontend Engineer":jobTitle} role as I am genuinely interested in the opportunity. ${engineer=="true"?"So it would be a great help to have my application forwarded to the recruiting or HR team, as appropriate.":"I believe that my experience aligns well with the requirements of the role, making it a suitable fit for me."}</p>
 
           <p>Thank you for your time, and I've attached my resume for your reference. Please feel free to contact me on my mobile at your convenience to further discuss.</p>
           
@@ -86,7 +86,7 @@ function composeEmail(email, subject, person_name, company_name, checkedornot, j
 let namui="";
 let subject = "Expressing Interest in Software or Frontend Engineer Opportunity";
 
-async function checkForElement1(format, gmail, domain, checkedornot, jobLink, jobTitle) {
+async function checkForElement1(format, gmail, domain, checkedornot, jobLink, jobTitle, engineer) {
     const targetElements = document.querySelectorAll(".cb-mb-0.cb-mt-0.cb-text-lg.cb-font-medium");
     
     if (targetElements.length) {
@@ -110,12 +110,12 @@ async function checkForElement1(format, gmail, domain, checkedornot, jobLink, jo
         let name = person_name.split(" ")
         let email = name[0].toLowerCase()+"."+name[name.length - 1].toLowerCase()+"@"+com_gmail.toLowerCase()+"."+domain_name;
         console.log(email)
-        await composeEmail(email, subject, person_name, company_name, checkedornot, jobLink, jobTitle);
+        await composeEmail(email, subject, person_name, company_name, checkedornot, jobLink, jobTitle, engineer);
       }
     }
 }
 
-async function checkForElement2(format, gmail, domain, checkedornot, jobLink, jobTitle) {
+async function checkForElement2(format, gmail, domain, checkedornot, jobLink, jobTitle, engineer) {
     const targetElements = document.querySelectorAll(".cb-mb-0.cb-mt-0.cb-text-lg.cb-font-medium");
     
     if (targetElements.length) {
@@ -137,12 +137,12 @@ async function checkForElement2(format, gmail, domain, checkedornot, jobLink, jo
           let name = person_name.split(" ")
           let email = name[0][0].toLowerCase()+name[name.length - 1].toLowerCase()+"@"+com_gmail.toLowerCase()+"."+domain_name;
           console.log(email)
-          await composeEmail(email, subject, person_name, company_name, checkedornot, jobLink, jobTitle);
+          await composeEmail(email, subject, person_name, company_name, checkedornot, jobLink, jobTitle, engineer);
         }
       }
 }
 
-async function checkForElement3(format, gmail, domain, checkedornot, jobLink, jobTitle) {
+async function checkForElement3(format, gmail, domain, checkedornot, jobLink, jobTitle, engineer) {
     const targetElements = document.querySelectorAll(".cb-mb-0.cb-mt-0.cb-text-lg.cb-font-medium");
 
     
@@ -165,12 +165,12 @@ async function checkForElement3(format, gmail, domain, checkedornot, jobLink, jo
           let name = person_name.split(" ")
           let email = name[0].toLowerCase()+"@"+com_gmail.toLowerCase()+"."+domain_name;
           console.log(email)
-          await composeEmail(email, subject, person_name, company_name, checkedornot, jobLink, jobTitle);
+          await composeEmail(email, subject, person_name, company_name, checkedornot, jobLink, jobTitle, engineer);
         }
       }
 }
 
-async function checkForElement4(format, gmail, domain, checkedornot, jobLink, jobTitle) {
+async function checkForElement4(format, gmail, domain, checkedornot, jobLink, jobTitle, engineer) {
     const targetElements = document.querySelectorAll(".cb-mb-0.cb-mt-0.cb-text-lg.cb-font-medium");
     
     if (targetElements.length) {
@@ -192,12 +192,12 @@ async function checkForElement4(format, gmail, domain, checkedornot, jobLink, jo
           let name = person_name.split(" ")
           let email = name[0].toLowerCase()+name[name.length - 1].toLowerCase()+"@"+com_gmail.toLowerCase()+"."+domain_name;
           console.log(email)
-          await composeEmail(email, subject, person_name, company_name, checkedornot, jobLink, jobTitle);
+          await composeEmail(email, subject, person_name, company_name, checkedornot, jobLink, jobTitle, engineer);
         }
       }
 }
 
-async function checkForElement5(format, gmail, domain, checkedornot, jobLink, jobTitle) {
+async function checkForElement5(format, gmail, domain, checkedornot, jobLink, jobTitle, engineer) {
   const targetElements = document.querySelectorAll(".cb-mb-0.cb-mt-0.cb-text-lg.cb-font-medium");
   
   if (targetElements.length) {
@@ -221,12 +221,12 @@ async function checkForElement5(format, gmail, domain, checkedornot, jobLink, jo
       let name = person_name.split(" ")
       let email = name[0].toLowerCase()+"."+name[name.length - 1][0].toLowerCase()+"@"+com_gmail.toLowerCase()+"."+domain_name;
       console.log(email)
-      await composeEmail(email, subject, person_name, company_name, checkedornot, jobLink, jobTitle);
+      await composeEmail(email, subject, person_name, company_name, checkedornot, jobLink, jobTitle, engineer);
     }
   }
 }
 
-async function checkForElement6(format, gmail, domain, checkedornot, jobLink, jobTitle) {
+async function checkForElement6(format, gmail, domain, checkedornot, jobLink, jobTitle, engineer) {
   const targetElements = document.querySelectorAll(".cb-mb-0.cb-mt-0.cb-text-lg.cb-font-medium");
   
   if (targetElements.length) {
@@ -250,7 +250,7 @@ async function checkForElement6(format, gmail, domain, checkedornot, jobLink, jo
       let name = person_name.split(" ")
       let email = name[0].toLowerCase()+name[name.length - 1][0].toLowerCase()+"@"+com_gmail.toLowerCase()+"."+domain_name;
       console.log(email)
-      await composeEmail(email, subject, person_name, company_name, checkedornot, jobLink, jobTitle);
+      await composeEmail(email, subject, person_name, company_name, checkedornot, jobLink, jobTitle, engineer);
     }
   }
 }
@@ -266,17 +266,17 @@ chrome.runtime.onMessage.addListener(function (message, sender, sendResponse) {
 
 
     if (message.messageText === "f1") {
-      checkInterval1 = setInterval(() => checkForElement1(message.messageText,message.email,message.domain,message.checkedornot,message.jobLink,message.jobTitle), 1000);
+      checkInterval1 = setInterval(() => checkForElement1(message.messageText,message.email,message.domain,message.checkedornot,message.jobLink,message.jobTitle,message.engineer), 1000);
     } else if (message.messageText === "f2") {
-      checkInterval2 = setInterval(() => checkForElement2(message.messageText,message.email,message.domain,message.checkedornot,message.jobLink,message.jobTitle), 1000);
+      checkInterval2 = setInterval(() => checkForElement2(message.messageText,message.email,message.domain,message.checkedornot,message.jobLink,message.jobTitle,message.engineer), 1000);
     } else if (message.messageText === "f3") {
-      checkInterval3 = setInterval(() => checkForElement3(message.messageText,message.email,message.domain,message.checkedornot,message.jobLink,message.jobTitle), 1000);
+      checkInterval3 = setInterval(() => checkForElement3(message.messageText,message.email,message.domain,message.checkedornot,message.jobLink,message.jobTitle,message.engineer), 1000);
     } else if (message.messageText === "f4") {
-      checkInterval4 = setInterval(() => checkForElement4(message.messageText,message.email,message.domain,message.checkedornot,message.jobLink,message.jobTitle), 1000);
+      checkInterval4 = setInterval(() => checkForElement4(message.messageText,message.email,message.domain,message.checkedornot,message.jobLink,message.jobTitle,message.engineer), 1000);
     } else if (message.messageText === "f5") {
-      checkInterval5 = setInterval(() => checkForElement5(message.messageText,message.email,message.domain,message.checkedornot,message.jobLink,message.jobTitle), 1000);
+      checkInterval5 = setInterval(() => checkForElement5(message.messageText,message.email,message.domain,message.checkedornot,message.jobLink,message.jobTitle,message.engineer), 1000);
     } else if (message.messageText === "f6") {
-      checkInterval6 = setInterval(() => checkForElement6(message.messageText,message.email,message.domain,message.checkedornot,message.jobLink,message.jobTitle), 1000);
+      checkInterval6 = setInterval(() => checkForElement6(message.messageText,message.email,message.domain,message.checkedornot,message.jobLink,message.jobTitle,message.engineer), 1000);
     } else if(message.messageText === "stop"){
       console.log("Clearbit Auto Stopped!")
     }

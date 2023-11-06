@@ -6,6 +6,7 @@ document.addEventListener("DOMContentLoaded", async () => {
     const email = document.getElementById('email');
     const domain = document.getElementById('domain');
     const checkbox = document.getElementById('myCheckbox');
+    const checkbox1 = document.getElementById('myCheckbox1');
     const buttons = document.querySelectorAll('.format');
     const myButton = document.getElementById('myButton');
     const jobTitle = document.getElementById('jobTitle');
@@ -18,6 +19,7 @@ document.addEventListener("DOMContentLoaded", async () => {
     const getemail = localStorage.getItem('email');
     const getdomain = localStorage.getItem('domain');
     const getcheckedornot = localStorage.getItem('checkedornot');
+    const getcheckedornot1 = localStorage.getItem('checkedornot1');
     const getjobTitle = localStorage.getItem('jobTitle');
     const getjobLink = localStorage.getItem('jobLink');
 
@@ -41,12 +43,15 @@ document.addEventListener("DOMContentLoaded", async () => {
       localStorage.setItem('jobLink', jobLink.value);
     });
 
+    checkbox1.checked = getcheckedornot1=="true"?true:false;
+
     checkbox.checked = getcheckedornot=="true"?true:false;
     if (checkbox.checked) {
       additionalFields.style.display = 'block';
     } else {
       additionalFields.style.display = 'none';
     }
+
     checkbox.addEventListener('change', function() {
       localStorage.setItem('checkedornot', checkbox.checked);
       if (checkbox.checked) {
@@ -54,6 +59,10 @@ document.addEventListener("DOMContentLoaded", async () => {
       } else {
         additionalFields.style.display = 'none';
       }
+    });
+
+    checkbox1.addEventListener('change', function() {
+      localStorage.setItem('checkedornot1', checkbox1.checked);
     });
     
     buttons.forEach(button => {
@@ -81,6 +90,7 @@ document.addEventListener("DOMContentLoaded", async () => {
       const getcheckedornot = localStorage.getItem('checkedornot');
       const getjobTitle = localStorage.getItem('jobTitle');
       const getjobLink = localStorage.getItem('jobLink');
+      const engineer = localStorage.getItem('checkedornot1')
       console.log(getemail)
       console.log(getdomain)
       console.log(getcheckedornot)
@@ -88,7 +98,7 @@ document.addEventListener("DOMContentLoaded", async () => {
       console.log(getjobLink)
 
       chrome.tabs.query({ active: true, currentWindow: true }, function (tabs) {
-        chrome.tabs.sendMessage(tabs[0].id, { action: `runMyFunction${selectedButtonId}`, messageText: selectedButtonId, email: getemail, domain: getdomain, checkedornot: getcheckedornot, jobTitle: getjobTitle, jobLink: getjobLink });
+        chrome.tabs.sendMessage(tabs[0].id, { action: `runMyFunction${selectedButtonId}`, messageText: selectedButtonId, email: getemail, domain: getdomain, checkedornot: getcheckedornot, jobTitle: getjobTitle, jobLink: getjobLink, engineer: engineer });
       });
     });
 
