@@ -49,7 +49,7 @@ function composeEmail(email, subject, person_name, company_name, checkedornot, j
           
           <p>I bring one year of hands-on experience acquired through Full-Time Opportunities, during which I successfully contributed to various Large Scale Applications. Currently, I am seeking a new professional opportunity as a ${jobTitle} role that will allow me to expand my skill set and make a meaningful contribution to an exceptional team and product.</p>
           
-          <p>I would love to get a referral from your side for the ${jobTitle} role at ${company_name.charAt(0).toUpperCase() + company_name.slice(1)}. I believe this experience would be a great fit for me.</p>
+          <p>I would love to get a referral from your side or forwading my application to the HR/Recruiting team for the ${jobTitle} role at ${company_name.charAt(0).toUpperCase() + company_name.slice(1)}. I believe that my experience aligns well with the requirements of the role, making it a suitable fit for me.</p>
   
           <p>Thank you for your time, and I've attached my resume and the Job link for your reference. Please feel free to contact me on my mobile at your convenience to further discuss.</p>
           
