@@ -1,6 +1,6 @@
 function composeEmail(email, subject, person_name, company_name, checkedornot, jobLink, jobTitle, engineer) {
   return new Promise((resolve) => {
-    document.querySelectorAll('input.agP.aFw')[1].value = email
+    document.querySelector('input.agP.aFw').value = email
     if (checkedornot == "true") {
       subject = subject.replace("Software or Frontend Engineer", jobTitle);
     } else {
