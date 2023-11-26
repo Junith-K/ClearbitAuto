@@ -2,10 +2,10 @@ function composeEmail(email, subject, person_name, company_name, checkedornot, j
   return new Promise((resolve) => {
     document.querySelector('input.agP.aFw').value = email
     if (checkedornot == "true") {
-      subject = subject.replace("Software or Frontend Engineer", jobTitle);
+      subject = subject.replace("Software or Frontend Engineer Intern", jobTitle);
     } else {
       if (jobTitle != "") {
-        subject = subject.replace("Software or Frontend Engineer", jobTitle);
+        subject = subject.replace("Software or Frontend Engineer Intern", jobTitle);
       }
     }
     document.querySelector('input[name="subjectbox"]').value = subject
@@ -24,13 +24,11 @@ function composeEmail(email, subject, person_name, company_name, checkedornot, j
           
           <p>I hope you're doing well. I'm reaching out because I'm genuinely impressed with ${company_name.charAt(0).toUpperCase() + company_name.slice(1)}'s reputation and impact in the industry.</p> 
           
-          <p>I am currently enrolled as a student at IIIT Sri City, specializing in Software Engineering. I have a particular passion for technologies such as ReactJS, NextJS, NodeJS, ExpressJS, and MongoDB. For a comprehensive overview of my skills and projects, please explore my portfolio at the following link: <a href="https://portfolio-juni.vercel.app/">Portfolio_Juni</a>.</p>
+          <p>I specialize in Software Engineering with passion for technologies such as ReactJS, NextJS, NodeJS, ExpressJS, MongoDB and many more. For a comprehensive overview of my skills and projects, please explore my portfolio at the following link: <a href="https://portfolio-juni.vercel.app/">Portfolio_Juni</a>.</p>
           
-          <p>I bring one year of hands-on experience acquired through Full-Time Opportunities, during which I successfully contributed to various Large Scale Applications. Currently, I am seeking a new professional opportunity as a ${jobTitle == "" ? "Software or Frontend Engineer" : jobTitle} role that will allow me to expand my skill set and make a meaningful contribution to an exceptional team and product.</p>
+          <p>I bring one year of hands-on experience acquired through Full-Time Opportunities, during which I successfully contributed to various Large Scale Applications.</p>
           
-          <p>I am keen to be considered for the ${jobTitle == "" ? "Software or Frontend Engineer" : jobTitle} role as I am genuinely interested in the opportunity. ${engineer == "true" ? "So it would be a great help to have my application forwarded to the recruiting or HR team, as appropriate." : "I believe that my experience aligns well with the requirements of the role, making it a suitable fit for me."}</p>
-
-          <p>Thank you for your time, and I've attached my resume for your reference. Please feel free to contact me on my mobile at your convenience to further discuss.</p>
+          <p>I am enthusiastic about the ${jobTitle == "" ? "Software or Frontend Engineer Intern" : jobTitle} role and eager to contribute to ${company_name.charAt(0).toUpperCase() + company_name.slice(1)}. ${engineer == "true" ? "I would greatly appreciate your assistance in forwarding my application to the appropriate recruiting or HR team. Your support in this matter is highly appreciated." : `I believe my skills align well with the requirements and that I would seamlessly integrate into the team. Being part of ${company_name.charAt(0).toUpperCase() + company_name.slice(1)} is a prospect I am genuinely excited about.`}</p>
           
           <a href="https://drive.google.com/file/d/1LQoGXfPWFCU4vheV0o5_58vwmJVwFnQd/view">Resume_Junith</a>
 
@@ -41,27 +39,25 @@ function composeEmail(email, subject, person_name, company_name, checkedornot, j
 
       //referral
       divElement.innerHTML = `
-          <p>Dear ${person_name},</p>
-          
-          <p>I hope you're doing well. I'm reaching out because I'm genuinely impressed with ${company_name.charAt(0).toUpperCase() + company_name.slice(1)}'s reputation and impact in the industry.</p> 
-          
-          <p>I am currently enrolled as a student at IIIT Sri City, specializing in Software Engineering. I have a particular passion for technologies such as ReactJS, NextJS, NodeJS, ExpressJS, and MongoDB. For a comprehensive overview of my skills and projects, please explore my portfolio at the following link: <a href="https://portfolio-juni.vercel.app/">Portfolio_Juni</a>.</p>
-          
-          <p>I bring one year of hands-on experience acquired through Full-Time Opportunities, during which I successfully contributed to various Large Scale Applications. Currently, I am seeking a new professional opportunity as a ${jobTitle} role that will allow me to expand my skill set and make a meaningful contribution to an exceptional team and product.</p>
-          
-          <p>I would love to get a referral from your side or forward my application to the HR/Recruiting team as appropriate for the ${jobTitle} role at ${company_name.charAt(0).toUpperCase() + company_name.slice(1)}. I believe that my experience aligns well with the requirements of the role, making it a suitable fit for me.</p>
-  
-          <p>Thank you for your time, and I've attached my resume and the Job link for your reference. Please feel free to contact me on my mobile at your convenience to further discuss.</p>
-          
-          <a href="https://drive.google.com/file/d/1LQoGXfPWFCU4vheV0o5_58vwmJVwFnQd/view">Resume_Junith</a>
-  
-          <br>
-  
-          <a href="${jobLink}">Job_Link</a>
-  
-          <br>
-  
-          <p>Warm regards,<br>Junith<br>+919346723027</p>`;
+        <p>Dear ${person_name},</p>
+        
+        <p>I hope you're doing well. I'm reaching out because I'm genuinely impressed with ${company_name.charAt(0).toUpperCase() + company_name.slice(1)}'s reputation and impact in the industry.</p> 
+        
+        <p>I specialize in Software Engineering with passion for technologies such as ReactJS, NextJS, NodeJS, ExpressJS, MongoDB and many more. For a comprehensive overview of my skills and projects, please explore my portfolio at the following link: <a href="https://portfolio-juni.vercel.app/">Portfolio_Juni</a>.</p>
+        
+        <p>I bring one year of hands-on experience acquired through Full-Time Opportunities, during which I successfully contributed to various Large Scale Applications.</p>
+        
+        <p>I'm genuinely excited about the ${jobTitle == "" ? "Software or Frontend Engineer Intern" : jobTitle} role and eager to contribute to ${company_name.charAt(0).toUpperCase() + company_name.slice(1)}. A referral from you would greatly boost my application. If not possible, please forward my resume/email to the recruiting team, emphasizing my sincere interest in contributing to and growing with ${company_name.charAt(0).toUpperCase() + company_name.slice(1)}. Your support in this matter is highly appreciated.</p>
+
+        <a href="https://drive.google.com/file/d/1LQoGXfPWFCU4vheV0o5_58vwmJVwFnQd/view">Resume_Junith</a>
+
+        <br>
+
+        <a href="${jobLink}">Job_Link</a>
+
+        <br>
+
+        <p>Warm regards,<br>Junith<br>+919346723027</p>`;
     }
 
     const divElement1 = document.querySelector('.T-I.J-J5-Ji.aoO.v7.T-I-atl.L3');
@@ -91,10 +87,10 @@ function composeEmailAll(email, subject, person_name, company_name, checkedornot
     }
     document.querySelectorAll('input.agP.aFw')[1].value = email
     if (checkedornot == "true") {
-      subject = subject.replace("Software or Frontend Engineer", jobTitle);
+      subject = subject.replace("Software or Frontend Engineer Intern", jobTitle);
     } else {
       if (jobTitle != "") {
-        subject = subject.replace("Software or Frontend Engineer", jobTitle);
+        subject = subject.replace("Software or Frontend Engineer Intern", jobTitle);
       }
     }
     document.querySelector('input[name="subjectbox"]').value = subject
@@ -109,23 +105,21 @@ function composeEmailAll(email, subject, person_name, company_name, checkedornot
     //ceo
     if (checkedornot == "false" || checkedornot == null) {
       divElement.innerHTML = `
-        <p>Dear ${person_name},</p>
-        
-        <p>I hope you're doing well. I'm reaching out because I'm genuinely impressed with ${company_name.charAt(0).toUpperCase() + company_name.slice(1)}'s reputation and impact in the industry.</p> 
-        
-        <p>I am currently enrolled as a student at IIIT Sri City, specializing in Software Engineering. I have a particular passion for technologies such as ReactJS, NextJS, NodeJS, ExpressJS, and MongoDB. For a comprehensive overview of my skills and projects, please explore my portfolio at the following link: <a href="https://portfolio-juni.vercel.app/">Portfolio_Juni</a>.</p>
-        
-        <p>I bring one year of hands-on experience acquired through Full-Time Opportunities, during which I successfully contributed to various Large Scale Applications. Currently, I am seeking a new professional opportunity as a ${jobTitle == "" ? "Software or Frontend Engineer" : jobTitle} role that will allow me to expand my skill set and make a meaningful contribution to an exceptional team and product.</p>
-        
-        <p>I am keen to be considered for the ${jobTitle == "" ? "Software or Frontend Engineer" : jobTitle} role as I am genuinely interested in the opportunity. ${engineer == "true" ? "So it would be a great help to have my application forwarded to the recruiting or HR team, as appropriate." : "I believe that my experience aligns well with the requirements of the role, making it a suitable fit for me."}</p>
+          <p>Dear ${person_name},</p>
+          
+          <p>I hope you're doing well. I'm reaching out because I'm genuinely impressed with ${company_name.charAt(0).toUpperCase() + company_name.slice(1)}'s reputation and impact in the industry.</p> 
+          
+          <p>I specialize in Software Engineering with passion for technologies such as ReactJS, NextJS, NodeJS, ExpressJS, MongoDB and many more. For a comprehensive overview of my skills and projects, please explore my portfolio at the following link: <a href="https://portfolio-juni.vercel.app/">Portfolio_Juni</a>.</p>
+          
+          <p>I bring one year of hands-on experience acquired through Full-Time Opportunities, during which I successfully contributed to various Large Scale Applications.</p>
+          
+          <p>I am keen to be considered for the ${jobTitle == "" ? "Software or Frontend Engineer Intern" : jobTitle} role as I am genuinely interested in the opportunity. ${engineer == "true" ? "So it would be a great help to have my application forwarded to the recruiting or HR team, as appropriate." : `I am keenly interested in contributing to and being a part of ${company_name.charAt(0).toUpperCase() + company_name.slice(1)} as I firmly believe that I would be a good fit and would get along with the team very well.`}</p>
+          
+          <a href="https://drive.google.com/file/d/1LQoGXfPWFCU4vheV0o5_58vwmJVwFnQd/view">Resume_Junith</a>
 
-        <p>Thank you for your time, and I've attached my resume for your reference. Please feel free to contact me on my mobile at your convenience to further discuss.</p>
-        
-        <a href="https://drive.google.com/file/d/1LQoGXfPWFCU4vheV0o5_58vwmJVwFnQd/view">Resume_Junith</a>
+          <br>
 
-        <br>
-
-        <p>Warm regards,<br>Junith<br>+919346723027</p>`;
+          <p>Warm regards,<br>Junith<br>+919346723027</p>`;
     } else {
 
       //referral
@@ -134,14 +128,12 @@ function composeEmailAll(email, subject, person_name, company_name, checkedornot
         
         <p>I hope you're doing well. I'm reaching out because I'm genuinely impressed with ${company_name.charAt(0).toUpperCase() + company_name.slice(1)}'s reputation and impact in the industry.</p> 
         
-        <p>I am currently enrolled as a student at IIIT Sri City, specializing in Software Engineering. I have a particular passion for technologies such as ReactJS, NextJS, NodeJS, ExpressJS, and MongoDB. For a comprehensive overview of my skills and projects, please explore my portfolio at the following link: <a href="https://portfolio-juni.vercel.app/">Portfolio_Juni</a>.</p>
+        <p>I specialize in Software Engineering with passion for technologies such as ReactJS, NextJS, NodeJS, ExpressJS, MongoDB and many more. For a comprehensive overview of my skills and projects, please explore my portfolio at the following link: <a href="https://portfolio-juni.vercel.app/">Portfolio_Juni</a>.</p>
         
-        <p>I bring one year of hands-on experience acquired through Full-Time Opportunities, during which I successfully contributed to various Large Scale Applications. Currently, I am seeking a new professional opportunity as a ${jobTitle} role that will allow me to expand my skill set and make a meaningful contribution to an exceptional team and product.</p>
+        <p>I bring one year of hands-on experience acquired through Full-Time Opportunities, during which I successfully contributed to various Large Scale Applications.</p>
         
         <p>I would love to get a referral from your side or forward my application to the HR/Recruiting team as appropriate for the ${jobTitle} role at ${company_name.charAt(0).toUpperCase() + company_name.slice(1)}. I believe that my experience aligns well with the requirements of the role, making it a suitable fit for me.</p>
 
-        <p>Thank you for your time, and I've attached my resume and the Job link for your reference. Please feel free to contact me on my mobile at your convenience to further discuss.</p>
-        
         <a href="https://drive.google.com/file/d/1LQoGXfPWFCU4vheV0o5_58vwmJVwFnQd/view">Resume_Junith</a>
 
         <br>
@@ -173,7 +165,7 @@ function composeEmailAll(email, subject, person_name, company_name, checkedornot
 }
 
 let namui = "";
-let subject = "Expressing Interest in Software or Frontend Engineer Opportunity";
+let subject = "Expressing Interest in Software or Frontend Engineer Intern Opportunity";
 
 async function checkForElementAll(format, gmail, domain, checkedornot, jobLink, jobTitle, engineer) {
   const buttons = document.querySelectorAll('.cb-group.cb-flex.cb-w-full.cb-items-center.cb-justify-between.cb-bg-white.cb-px-6.cb-py-3');
@@ -237,12 +229,15 @@ async function checkForElement1(format, gmail, domain, checkedornot, jobLink, jo
     return;
   }
   const targetElements = document.querySelectorAll(".cb-mb-0.cb-mt-0.cb-text-lg.cb-font-medium");
-
+  const mailer = document.querySelector(".ck-link");
+  const dommy = mailer.textContent.split('.')
+  const sodommy = dommy[1]
+  const soemmy = dommy[0]
   if (targetElements.length) {
     const person_name = targetElements[0].textContent;
     const company_name = targetElements[1].textContent;
-    const com_gmail = gmail == "" || gmail == null ? company_name : gmail;
-    const domain_name = domain == "" || domain == null ? "com" : domain;
+    const com_gmail = gmail == "" || gmail == null ? soemmy : gmail;
+    const domain_name = domain == "" || domain == null ? sodommy : domain;
     if (namui != person_name) {
       console.log(gmail)
       console.log(domain)
@@ -278,12 +273,15 @@ async function checkForElement2(format, gmail, domain, checkedornot, jobLink, jo
     return;
   }
   const targetElements = document.querySelectorAll(".cb-mb-0.cb-mt-0.cb-text-lg.cb-font-medium");
-
+  const mailer = document.querySelector(".ck-link");
+  const dommy = mailer.textContent.split('.')
+  const sodommy = dommy[1]
+  const soemmy = dommy[0]
   if (targetElements.length) {
     const person_name = targetElements[0].textContent;
     const company_name = targetElements[1].textContent;
-    const com_gmail = gmail == "" || gmail == null ? company_name : gmail;
-    const domain_name = domain == "" || domain == null ? "com" : domain;
+    const com_gmail = gmail == "" || gmail == null ? soemmy : gmail;
+    const domain_name = domain == "" || domain == null ? sodommy : domain;
     if (namui != person_name) {
       namui = person_name;
       const composeButton = document.querySelector('div[role="button"][jsaction="click:dlrqf; clickmod:dlrqf"]');
@@ -317,13 +315,15 @@ async function checkForElement3(format, gmail, domain, checkedornot, jobLink, jo
     return;
   }
   const targetElements = document.querySelectorAll(".cb-mb-0.cb-mt-0.cb-text-lg.cb-font-medium");
-
-
+  const mailer = document.querySelector(".ck-link");
+  const dommy = mailer.textContent.split('.')
+  const sodommy = dommy[1]
+  const soemmy = dommy[0]
   if (targetElements.length) {
     const person_name = targetElements[0].textContent;
     const company_name = targetElements[1].textContent;
-    const com_gmail = gmail == "" || gmail == null ? company_name : gmail;
-    const domain_name = domain == "" || domain == null ? "com" : domain;
+    const com_gmail = gmail == "" || gmail == null ? soemmy : gmail;
+    const domain_name = domain == "" || domain == null ? sodommy : domain;
     if (namui != person_name) {
       namui = person_name;
       const composeButton = document.querySelector('div[role="button"][jsaction="click:dlrqf; clickmod:dlrqf"]');
@@ -357,12 +357,15 @@ async function checkForElement4(format, gmail, domain, checkedornot, jobLink, jo
     return;
   }
   const targetElements = document.querySelectorAll(".cb-mb-0.cb-mt-0.cb-text-lg.cb-font-medium");
-
+  const mailer = document.querySelector(".ck-link");
+  const dommy = mailer.textContent.split('.')
+  const sodommy = dommy[1]
+  const soemmy = dommy[0]
   if (targetElements.length) {
     const person_name = targetElements[0].textContent;
     const company_name = targetElements[1].textContent;
-    const com_gmail = gmail == "" || gmail == null ? company_name : gmail;
-    const domain_name = domain == "" || domain == null ? "com" : domain;
+    const com_gmail = gmail == "" || gmail == null ? soemmy : gmail;
+    const domain_name = domain == "" || domain == null ? sodommy : domain;
     if (namui != person_name) {
       namui = person_name;
       const composeButton = document.querySelector('div[role="button"][jsaction="click:dlrqf; clickmod:dlrqf"]');
@@ -396,12 +399,15 @@ async function checkForElement5(format, gmail, domain, checkedornot, jobLink, jo
     return;
   }
   const targetElements = document.querySelectorAll(".cb-mb-0.cb-mt-0.cb-text-lg.cb-font-medium");
-
+  const mailer = document.querySelector(".ck-link");
+  const dommy = mailer.textContent.split('.')
+  const sodommy = dommy[1]
+  const soemmy = dommy[0]
   if (targetElements.length) {
     const person_name = targetElements[0].textContent;
     const company_name = targetElements[1].textContent;
-    const com_gmail = gmail == "" || gmail == null ? company_name : gmail;
-    const domain_name = domain == "" || domain == null ? "com" : domain;
+    const com_gmail = gmail == "" || gmail == null ? soemmy : gmail;
+    const domain_name = domain == "" || domain == null ? sodommy : domain;
     if (namui != person_name) {
       console.log(gmail)
       console.log(domain)
@@ -437,12 +443,15 @@ async function checkForElement6(format, gmail, domain, checkedornot, jobLink, jo
     return;
   }
   const targetElements = document.querySelectorAll(".cb-mb-0.cb-mt-0.cb-text-lg.cb-font-medium");
-
+  const mailer = document.querySelector(".ck-link");
+  const dommy = mailer.textContent.split('.')
+  const sodommy = dommy[1]
+  const soemmy = dommy[0]
   if (targetElements.length) {
     const person_name = targetElements[0].textContent;
     const company_name = targetElements[1].textContent;
-    const com_gmail = gmail == "" || gmail == null ? company_name : gmail;
-    const domain_name = domain == "" || domain == null ? "com" : domain;
+    const com_gmail = gmail == "" || gmail == null ? soemmy : gmail;
+    const domain_name = domain == "" || domain == null ? sodommy : domain;
     if (namui != person_name) {
       console.log(gmail)
       console.log(domain)
