@@ -1,10 +1,10 @@
 //ENV Variables
-var SUBJECT="Regarding Inquiry for Software Engineer Intern Opportunity"
+var SUBJECT="Regarding Interest in Software Engineer Intern Opportunity"
 var JOB_TITLE_REPLACE=/Software Engineer Intern/g
 var HR=`
 <p>Dear PERSON_NAME,</p>
 
-<p>I hope you're doing well. I'm reaching out with genuine interest in working with COMPANY_NAME.</p> 
+<p>I hope you're doing well FIRST_NAME. I'm reaching out with genuine interest in working with COMPANY_NAME.</p> 
 
 <p>I have one year of experience and have already completed two full-time internships, where I worked on various enterprise-level applications as a Software Engineer.</p>
 
@@ -27,7 +27,7 @@ Junith
 var NO_POSITION_EMPLOYEE=`
 <p>Dear PERSON_NAME,</p>
 
-<p>I hope you're doing well. I'm reaching out with genuine interest in working with COMPANY_NAME.</p> 
+<p>I hope you're doing well FIRST_NAME. I'm reaching out with genuine interest in working with COMPANY_NAME.</p> 
 
 <p>I have one year of experience and have already completed two full-time internships, where I worked on various enterprise-level applications as a Software Engineer.</p>
 
@@ -50,7 +50,7 @@ Junith
 var REFERRAL=`
 <p>Dear PERSON_NAME,</p>
 
-<p>I hope you're doing well. I'm reaching out with genuine interest in working with COMPANY_NAME.</p> 
+<p>I hope you're doing well FIRST_NAME. I'm reaching out with genuine interest in working with COMPANY_NAME.</p> 
 
 <p>I have one year of experience and have already completed two full-time internships, where I worked on various enterprise-level applications as a Software Engineer.</p>
 
@@ -101,7 +101,7 @@ function composeEmail(email, subject, person_name, company_name, checkedornot, j
     }
     temp_data = temp_data.replace("PERSON_NAME", person_name)
     temp_data = temp_data.replace(/COMPANY_NAME/g, company_name.charAt(0).toUpperCase() + company_name.slice(1));
-    temp_data = temp_data.replace("FIRST_NAME", person_name.split(" ")[0])
+    temp_data = temp_data.replace(/FIRST_NAME/g, person_name.split(" ")[0])
     if(jobTitle!=""){
       temp_data = temp_data.replace(JOB_TITLE_REPLACE, jobTitle)
     }
