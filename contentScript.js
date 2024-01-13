@@ -64,8 +64,6 @@ var REFERRAL=`
 
 JOB_LINK
 
-<br>
-
 <p>
 Thanks & Regards
 <br>
@@ -97,7 +95,11 @@ function composeEmail(email, subject, person_name, company_name, checkedornot, j
       temp_data = engineer=="true" ? NO_POSITION_EMPLOYEE : HR;
     } else {
       temp_data = REFERRAL;
-      temp_data = temp_data.replace("JOB_LINK", `<a href='${jobLink}'>Job_Link</a>`)
+      if(jobLink){
+        temp_data = temp_data.replace("JOB_LINK", `<a href='${jobLink}'>Job_Link</a><br>`)
+      }else{
+        temp_data = temp_data.replace("JOB_LINK", "")
+      }
     }
     temp_data = temp_data.replace("PERSON_NAME", person_name)
     temp_data = temp_data.replace(/COMPANY_NAME/g, company_name.charAt(0).toUpperCase() + company_name.slice(1));
