@@ -6,9 +6,7 @@ var HR=`
 
 <p>I hope you're doing well FIRST_NAME. I'm reaching out with genuine interest in working with COMPANY_NAME.</p> 
 
-<p>I have one year of experience and have already completed two full-time internships, where I worked on various enterprise-level applications as a Software Engineer.</p>
-
-<p>I'm eager to work as a Software Engineer Intern at COMPANY_NAME, as the company's ideals align with my own, and I am confident that I would not only learn and grow but also contribute meaningfully to the team.</p>
+<p>I have one year of experience and have already completed three full-time internships, where I worked on various enterprise-level applications as a Software Engineer. I'm genuinely interested to work as a Software Engineer Intern at COMPANY_NAME, and I would greatly appreciate your help FIRST_NAME.</p>
 
 <p>I hope you check out my portfolio, I've gotten tons of appreciation from managers for its visually stunning experience <a href="https://portfolio-juni.vercel.app/">Portfolio_Juni</a>. I look forward to a call where I can provide a more in depth look into my profile and discuss the Software Engineer Intern position further.</p>
 
@@ -29,9 +27,7 @@ var NO_POSITION_EMPLOYEE=`
 
 <p>I hope you're doing well FIRST_NAME. I'm reaching out with genuine interest in working with COMPANY_NAME.</p> 
 
-<p>I have one year of experience and have already completed two full-time internships, where I worked on various enterprise-level applications as a Software Engineer.</p>
-
-<p>I'm eager to work as a Software Engineer Intern at COMPANY_NAME, as the company's ideals align with my own, and I am confident that I would not only learn and grow but also contribute meaningfully to the team.</p>
+<p>I have one year of experience and have already completed three full-time internships, where I worked on various enterprise-level applications as a Software Engineer. I'm genuinely interested to work as a Software Engineer Intern at COMPANY_NAME, and I would greatly appreciate your help FIRST_NAME.</p>
 
 <p>I hope you check out my portfolio, I've gotten tons of appreciation from managers for its visually stunning experience <a href="https://portfolio-juni.vercel.app/">Portfolio_Juni</a>. So even though there might not be an open position as Software Engineer Intern right now, I would really appreciate it if you could forward this mail/resume to the recruiting/hr team.</p>
 
@@ -52,9 +48,7 @@ var REFERRAL=`
 
 <p>I hope you're doing well FIRST_NAME. I'm reaching out with genuine interest in working with COMPANY_NAME.</p> 
 
-<p>I have one year of experience and have already completed two full-time internships, where I worked on various enterprise-level applications as a Software Engineer.</p>
-
-<p>I'm eager to work as a Software Engineer Intern at COMPANY_NAME, as the company's ideals align with my own, and I am confident that I would not only learn and grow but also contribute meaningfully to the team.</p>
+<p>I have one year of experience and have already completed three full-time internships, where I worked on various enterprise-level applications as a Software Engineer. I'm genuinely interested to work as a Software Engineer Intern at COMPANY_NAME, and I would greatly appreciate your help FIRST_NAME.</p>
 
 <p>I hope you check out my portfolio, I've gotten tons of appreciation from managers for its visually stunning experience <a href="https://portfolio-juni.vercel.app/">Portfolio_Juni</a>. So it would be great to get a referral from your side for the Software Engineer Intern, if not possible please forward this mail/resume to the recruiting/hr team.</p>
 
