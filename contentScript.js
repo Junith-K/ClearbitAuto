@@ -111,6 +111,7 @@ function composeEmail(email, subject, person_name, company_name, checkedornot, j
 }
 
 var namui = "";
+var members_list = {};
 
 async function checkForElement1(gmail, domain, checkedornot, jobLink, jobTitle, engineer) {
   const buttons = document.querySelectorAll('.cb-group.cb-flex.cb-w-full.cb-items-center.cb-justify-between.cb-bg-white.cb-px-6.cb-py-3');
@@ -120,7 +121,13 @@ async function checkForElement1(gmail, domain, checkedornot, jobLink, jobTitle, 
       if (buttonName == namui) {
         button.style.backgroundColor = 'orange';
       } else {
-        button.style.backgroundColor = '';
+        for (let prop in members_list) {
+          if (members_list.hasOwnProperty(prop)) {
+            if(members_list[prop].has(buttonName)){
+              button.style.backgroundColor = '#faeab1';
+            }
+          }
+        }
       }
     });
     return;
@@ -133,11 +140,18 @@ async function checkForElement1(gmail, domain, checkedornot, jobLink, jobTitle, 
   if (targetElements.length) {
     const person_name = targetElements[0].textContent;
     const company_name = targetElements[1].textContent;
+    if(!(company_name in members_list)){
+      for (let prop in members_list) {
+        if (members_list.hasOwnProperty(prop)) {
+          delete members_list[prop];
+        }
+      }
+      members_list[company_name] = new Set();
+    }
+    members_list[company_name].add(person_name);
     const com_gmail = gmail == "" || gmail == null ? soemmy : gmail;
     const domain_name = domain == "" || domain == null ? sodommy : domain;
     if (namui != person_name) {
-      console.log(gmail)
-      console.log(domain)
       namui = person_name;
       const composeButton = document.querySelector('div[role="button"][jsaction="click:dlrqf; clickmod:dlrqf"]');
       composeButton.click();
@@ -164,7 +178,13 @@ async function checkForElement2(gmail, domain, checkedornot, jobLink, jobTitle, 
       if (buttonName == namui) {
         button.style.backgroundColor = 'orange';
       } else {
-        button.style.backgroundColor = '';
+        for (let prop in members_list) {
+          if (members_list.hasOwnProperty(prop)) {
+            if(members_list[prop].has(buttonName)){
+              button.style.backgroundColor = '#faeab1';
+            }
+          }
+        }
       }
     });
     return;
@@ -177,6 +197,15 @@ async function checkForElement2(gmail, domain, checkedornot, jobLink, jobTitle, 
   if (targetElements.length) {
     const person_name = targetElements[0].textContent;
     const company_name = targetElements[1].textContent;
+    if(!(company_name in members_list)){
+      for (let prop in members_list) {
+        if (members_list.hasOwnProperty(prop)) {
+          delete members_list[prop];
+        }
+      }
+      members_list[company_name] = new Set();
+    }
+    members_list[company_name].add(person_name);
     const com_gmail = gmail == "" || gmail == null ? soemmy : gmail;
     const domain_name = domain == "" || domain == null ? sodommy : domain;
     if (namui != person_name) {
@@ -206,7 +235,13 @@ async function checkForElement3(gmail, domain, checkedornot, jobLink, jobTitle, 
       if (buttonName == namui) {
         button.style.backgroundColor = 'orange';
       } else {
-        button.style.backgroundColor = '';
+        for (let prop in members_list) {
+          if (members_list.hasOwnProperty(prop)) {
+            if(members_list[prop].has(buttonName)){
+              button.style.backgroundColor = '#faeab1';
+            }
+          }
+        }
       }
     });
     return;
@@ -219,6 +254,15 @@ async function checkForElement3(gmail, domain, checkedornot, jobLink, jobTitle, 
   if (targetElements.length) {
     const person_name = targetElements[0].textContent;
     const company_name = targetElements[1].textContent;
+    if(!(company_name in members_list)){
+      for (let prop in members_list) {
+        if (members_list.hasOwnProperty(prop)) {
+          delete members_list[prop];
+        }
+      }
+      members_list[company_name] = new Set();
+    }
+    members_list[company_name].add(person_name);
     const com_gmail = gmail == "" || gmail == null ? soemmy : gmail;
     const domain_name = domain == "" || domain == null ? sodommy : domain;
     if (namui != person_name) {
@@ -248,7 +292,13 @@ async function checkForElement4(gmail, domain, checkedornot, jobLink, jobTitle, 
       if (buttonName == namui) {
         button.style.backgroundColor = 'orange';
       } else {
-        button.style.backgroundColor = '';
+        for (let prop in members_list) {
+          if (members_list.hasOwnProperty(prop)) {
+            if(members_list[prop].has(buttonName)){
+              button.style.backgroundColor = '#faeab1';
+            }
+          }
+        }
       }
     });
     return;
@@ -261,6 +311,15 @@ async function checkForElement4(gmail, domain, checkedornot, jobLink, jobTitle, 
   if (targetElements.length) {
     const person_name = targetElements[0].textContent;
     const company_name = targetElements[1].textContent;
+    if(!(company_name in members_list)){
+      for (let prop in members_list) {
+        if (members_list.hasOwnProperty(prop)) {
+          delete members_list[prop];
+        }
+      }
+      members_list[company_name] = new Set();
+    }
+    members_list[company_name].add(person_name);
     const com_gmail = gmail == "" || gmail == null ? soemmy : gmail;
     const domain_name = domain == "" || domain == null ? sodommy : domain;
     if (namui != person_name) {
@@ -290,7 +349,13 @@ async function checkForElement5(gmail, domain, checkedornot, jobLink, jobTitle, 
       if (buttonName == namui) {
         button.style.backgroundColor = 'orange';
       } else {
-        button.style.backgroundColor = '';
+        for (let prop in members_list) {
+          if (members_list.hasOwnProperty(prop)) {
+            if(members_list[prop].has(buttonName)){
+              button.style.backgroundColor = '#faeab1';
+            }
+          }
+        }
       }
     });
     return;
@@ -303,6 +368,15 @@ async function checkForElement5(gmail, domain, checkedornot, jobLink, jobTitle, 
   if (targetElements.length) {
     const person_name = targetElements[0].textContent;
     const company_name = targetElements[1].textContent;
+    if(!(company_name in members_list)){
+      for (let prop in members_list) {
+        if (members_list.hasOwnProperty(prop)) {
+          delete members_list[prop];
+        }
+      }
+      members_list[company_name] = new Set();
+    }
+    members_list[company_name].add(person_name);
     const com_gmail = gmail == "" || gmail == null ? soemmy : gmail;
     const domain_name = domain == "" || domain == null ? sodommy : domain;
     if (namui != person_name) {
@@ -334,7 +408,13 @@ async function checkForElement6(gmail, domain, checkedornot, jobLink, jobTitle, 
       if (buttonName == namui) {
         button.style.backgroundColor = 'orange';
       } else {
-        button.style.backgroundColor = '';
+        for (let prop in members_list) {
+          if (members_list.hasOwnProperty(prop)) {
+            if(members_list[prop].has(buttonName)){
+              button.style.backgroundColor = '#faeab1';
+            }
+          }
+        }
       }
     });
     return;
@@ -347,6 +427,15 @@ async function checkForElement6(gmail, domain, checkedornot, jobLink, jobTitle, 
   if (targetElements.length) {
     const person_name = targetElements[0].textContent;
     const company_name = targetElements[1].textContent;
+    if(!(company_name in members_list)){
+      for (let prop in members_list) {
+        if (members_list.hasOwnProperty(prop)) {
+          delete members_list[prop];
+        }
+      }
+      members_list[company_name] = new Set();
+    }
+    members_list[company_name].add(person_name);
     const com_gmail = gmail == "" || gmail == null ? soemmy : gmail;
     const domain_name = domain == "" || domain == null ? sodommy : domain;
     if (namui != person_name) {
